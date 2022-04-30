@@ -1,0 +1,24 @@
+#container {
+    height: auto;
+    text-align: justify;
+    font-size: 0.1px;
+    /* IE 9/10 don't like font-size: 0; */
+    min-width: 600px;
+}
+
+#container .Box {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    background: aquamarine;
+}
+
+.border{ 
+    border: 10px solid black;
+}
+
+#container:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
