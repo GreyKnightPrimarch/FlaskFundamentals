@@ -1,0 +1,46 @@
+.container {
+    width: 1000px;
+}
+
+.container,
+.tableContainer2,
+.tableContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+tr>th {
+    border: 3px solid rgb(158, 96, 96);
+}
+
+table,
+table td {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+
+table tr td {
+    width: auto;
+    align-items: center;
+    padding: 3px;
+    background-color: rgb(219, 219, 179);
+}
+
+table tr.header {
+    background-color: rgb(22, 59, 47);
+    color: yellow;
+    width: auto;
+}
+
+.table{
+    background-color: rgb(126, 126, 17);
+}
+
+.borderM {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
