@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/LaCounterCss.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/LaCounterCss.css') }}">
+    <title>Counter</title>
+</head>
+
+<body>
+    </style>
+    <div id="container">
+        <div class="titleContainer">
+            <h1 class="title">Counter</h1>
+            <p class="counter">{{c}}</p>
+        </div>
+
+        <div class="buttonContainer">
+            <form action="/c1" method="post">
+                <label for="CI">increment</label>
+                <input name="CI" type="submit" class="increment buttone"></input>
+            </form>
+            <form action="/reset" method="post">
+                <label for="Rst">reset</label>
+                <input name="Rst" type="submit" class="reset buttone"></input>
+            </form>
+        </div>
+        <div class="buttonContainer2">
+            <form action="/reset" method="post">
+                <label for="number">number</label>
+                <input type="number" id="tentacles" title="number" name="number" min="-100" max="100">
+                <label for="CI2"></label>
+                <input name="CI2" type="submit" placeholder="number" class="incrementX buttone"></input>
+            </form>
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>
