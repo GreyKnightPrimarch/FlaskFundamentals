@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+        type="text/css" href="{{ url_for('static', filename='/css/surveyCSS.css') }}">
+    </link>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container center">
+        <div class="formConatiner center">
+            <form action="/SurveyComplete" method="post">
+                <div class="top">
+                    <div class="col">
+                        <div class="columnsStacked">
+                            <label for="nameInput">Your Name:</label>
+                            <label for="locations">Dojo Location:</label>
+                            <label for="languages">Favorite Language:</label>
+                            <!-- <p>{{a}}</p>
+                            <p>{{b}}</p> -->
+                        </div>
+                    </div>
+                    <div class="col columnsStacked">
+                        <input type="text" title="nameInput" name="nameInput">
+                        <select id="locations" name="locations" class="dropdown">
+                            {%for i in range(0,a) %}
+                            <option value="{{lo[i]}}">{{lo[i]}}</option>
+                            {% endfor %}
+                            
+                        </select>
+                        <select id="languages" name="languages" class="dropdown">
+                            {%for i in range(0,b) %}
+                            <option value="{{la[i]}}">{{la[i]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="commentBox col">
+                    <label for="commenst">Comment (optional):</label>
+                    <input type="text" name="comment" id="commenst" class="comment">
+                    <label for="Sbutton"></label>
+                    <input type="submit" value="Submit" class="button-83"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
