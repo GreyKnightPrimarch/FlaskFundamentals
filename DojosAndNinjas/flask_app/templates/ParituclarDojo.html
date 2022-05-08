@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+        <h1>{{Do.name}}</h1>
+        <table>
+            <th>
+                <td>FirstName</td>
+                <td>lastName</td>
+                <td>age</td>
+                <td>Joined</td>
+                <td>Details last changed</td>
+            </th>
+            {%for ni in Nin%}
+            <tr>
+                <td>{{ni.firstName}}</td>
+                <td>{{ni.lastName}}</td>
+                <td>{{ni.age}}</td>
+                <td>{{ni.createdAt}}</td>
+                <td>{{ni.updatedAt}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

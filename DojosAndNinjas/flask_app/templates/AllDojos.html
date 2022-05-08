@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>All of the Dojos?</title>
+</head>
+<body>
+    <nav>
+        {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+    </nav>
+    <div class="container">
+        <div class="col1">
+            <h2>New Dojo</h2>
+            <form action="/createDojo" method="post">
+                <label for="dojoName">name: </label>
+                <input type="text" name="dojoName" id="dojoName">
+                <button type="submit" id="DojoCreate">Create Dojo</button>
+            </form>
+        </div>
+        <div class="col2">
+            <h2>All Dojos</h2>
+            <table>
+                {% for i in range(0,length) %}
+                <tr>
+                    <td>
+                        {{X[i].name}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href="/newNinja">Add Ninja</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
