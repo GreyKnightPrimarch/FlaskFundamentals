@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Add User</title>
+</head>
+<body>
+    <header>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+        <h2>For user ID: {{X.UserID}}</h2>
+        <form action="/UpdateUser/" method='post'>
+            <section>
+                <label for="FristName">First Name</label>
+                <input type="text" name="FristName" id="FristName" value="{{X.FristName}}">
+            </section>
+            <section>
+                <label for="Lastname">Last Name</label>
+                <input type="text" name="Lastname" id="Lastname" value="{{X.Lastname}}">
+            </section>
+            <section>
+                <label for="Email">Email</label>
+                <input type="text" name="Email" id="Email" value="{{X.Email}}">
+            </section>
+            <section>
+                <label for="Description">Description</label>
+                <textarea name="Description"  cols="50" rows="10" id="Description" value="{{X.Description}}"></textarea>
+            </section>
+            <section>
+                <p>Last updated: {{X.UpdatedAt}}</p>
+            </section>
+            <button type="submit">Add User</button>
+        </form>
+    </main>
+    <footer>
+<!-- 648 dps -->
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

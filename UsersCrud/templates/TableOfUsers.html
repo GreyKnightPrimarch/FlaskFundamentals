@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <div class="container">
+        <div class="tablearea">
+            <table class="tableUsers">
+                <th>
+                    <td class="Id-holder">
+                        <p>Id</p>
+                    </td>
+                    <td class="Fullname-holder">
+                        <p>Full Name</p>
+                    </td>
+                    <td class="Email-holder">
+                        <p>Email</p>
+                    </td>
+                    <td class="CreatedAt-holder">
+                        <p>CreatedAt</p>
+                    </td>
+                </th>
+                    {% for i in range(0,num) %}
+                        <tr>
+                            <td>
+                                <p>
+                                    {{X[i].id}}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {{X[i].FirstName}} {{X[i].LastName}}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {{X[i].Email}}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {{X[i].Description}}
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    {{X[i].CreatedAt}}
+                                </p>
+                            </td>
+                            <td>
+                                <a href="/user/{{X[i].id}}">Show</a>
+                                <a href="/user/{{X[i].id}}/Edit">Edit</a>
+                                <a href="/user/{{X[i].id}}/Remove">Remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
